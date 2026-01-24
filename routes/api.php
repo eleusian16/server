@@ -8,5 +8,9 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::get('/test', function (Request $request) {
-    return "test endpoint";
+    return response()->json([
+        'name' => 'Elena May Olaivar',
+        'section' => 'BSCS 601',
+        'fave song' => 'back to december'
+    ]);
 });

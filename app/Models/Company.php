@@ -2,16 +2,21 @@
 
 namespace App\Models;
 
-use App\Traits\HasUuid;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Company extends Model
 {
-    use HasFactory, HasUuid;
+    use HasFactory, HasUuids;
 
     protected $fillable = [
         'uuid',
         'name',
     ];
+
+    public function uniqueIds(): array
+    {
+        return ['uuid'];
+    }
 }

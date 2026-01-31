@@ -3,7 +3,6 @@
 namespace App\Service;
 
 use App\Http\Resources\UserResource;
-use App\Models\User;
 use App\Repository\UserRepository;
 use Illuminate\Support\Facades\Hash;
 

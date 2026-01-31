@@ -39,4 +39,13 @@ class UserService
             'token' => $token
         ], 200);
     }
+
+    public function logoutUser(object $user)
+    {
+        if ($user->currentAccessToken()) {
+            $user->currentAccessToken()->delete();
+        }
+
+        return response()->json(['message' => 'Logged out successfully'], 200);
+    }
 }
